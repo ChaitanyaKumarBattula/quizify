@@ -102,7 +102,7 @@ chroma_creator = ChromaCollectionCreator(processor, embedding_client)
 	- Provide feedback on the successful creation of the Chroma collection and allow users to input queries to generate quiz questions.
 
 
-![Document Upload](Quizify/RadicalAI_Gemini-quizzify6.2.png)
+![Document Upload](Quizify/RadicalAI_Gemini-quizzify9.3.png)
 
 ## Task 7: Quiz Generator Class
 - Setup Quiz Generator:

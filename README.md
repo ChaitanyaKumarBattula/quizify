@@ -77,7 +77,8 @@ text_splitter = CharacterTextSplitter(
 ```      
 - ChromaDB Integration: Create a Chroma collection in memory with the text chunks and embeddings model.
 - Test Pipeline: Verify the integration with a sample PDF and ensure successful creation of the Chroma collection
-![Document Upload]("Quizify/RadicalAI_Gemini-quizzify5.png")
+
+![Document Upload](Quizify/RadicalAI_Gemini-quizzify5.png)
 
 ## Task 6: Creating the Streamlit UI for Data Ingestion
 * **Initialize Components:**
@@ -99,8 +100,9 @@ chroma_creator = ChromaCollectionCreator(processor, embedding_client)
 * **Generate Quiz Questions:**
 	- On form submission, process the documents and create a Chroma collection.
 	- Provide feedback on the successful creation of the Chroma collection and allow users to input queries to generate quiz questions.
-    - ![Document Upload]("Quizify/RadicalAI_Gemini-quizzify6.2.png")
 
+
+![Document Upload](Quizify/RadicalAI_Gemini-quizzify6.2.png)
 
 ## Task 7: Quiz Generator Class
 - Setup Quiz Generator:
@@ -130,7 +132,7 @@ chroma_creator = ChromaCollectionCreator(processor, embedding_client)
     - Implement `validate_question` to avoid duplicates.
 -	Retry Mechanism: 
     - Attempt to generate new questions if duplicates are detected.
-    ![Document Upload](Quizify/RadicalAI_Gemini-quizzify3.1.png)
+    ![Document Upload](Quizify/RadicalAI_Gemini-quizzify8.3.png)
 
 
 ## Task 9: Generating Quiz UI
@@ -142,7 +144,7 @@ chroma_creator = ChromaCollectionCreator(processor, embedding_client)
     - Use Streamlit forms to show questions and multiple-choice answers.
 -	User Interaction: 
     - Allow users to select answers and provide feedback on correctness.
-
+ ![Document Upload](Quizify/RadicalAI_Gemini-quizzify9.5.png)
 
 
 ## Task 10: Screen State Handling
@@ -154,6 +156,7 @@ chroma_creator = ChromaCollectionCreator(processor, embedding_client)
     - Create quiz questions and manage quiz state in session.
 -	Question Navigation: 
     - Use Streamlit buttons to navigate and display questions.
+ ![Document Upload](Quizify/RadicalAI_Gemini-quizzify10.4.png)
 
 ## Appreciation
 -	Appreciate Radical AI for providing such a precious experience on AI engineering and backend development.

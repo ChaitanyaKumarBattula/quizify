@@ -1,4 +1,4 @@
-# Gemini Quizzify
+# Quizzify
 
 ## Overview
 

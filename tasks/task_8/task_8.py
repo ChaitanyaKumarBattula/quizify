@@ -12,14 +12,6 @@ from langchain_google_vertexai import VertexAI
 
 class QuizGenerator:
     def __init__(self, topic=None, num_questions=1, vectorstore=None):
-        """
-        Initializes the QuizGenerator with a required topic, the number of questions for the quiz,
-        and an optional vectorstore for querying related information.
-
-        :param topic: A string representing the required topic of the quiz.
-        :param num_questions: An integer representing the number of questions to generate for the quiz, up to a maximum of 10.
-        :param vectorstore: An optional vectorstore instance (e.g., ChromaDB) to be used for querying information related to the quiz topic.
-        """
         if not topic:
             self.topic = "General Knowledge"
         else:
@@ -58,14 +50,6 @@ class QuizGenerator:
             """
     
     def init_llm(self):
-        """
-        Initializes and configures the Large Language Model (LLM) for generating quiz questions.
-
-        This method should handle any setup required to interact with the LLM, including authentication,
-        setting up any necessary parameters, or selecting a specific model.
-
-        :return: An instance or configuration for the LLM.
-        """
         self.llm = VertexAI(
             model_name = "gemini-pro",
             temperature = 0.8, # Increased for less deterministic questions 
@@ -73,11 +57,6 @@ class QuizGenerator:
         )
 
     def generate_question_with_vectorstore(self):
-        """
-        Generates a quiz question based on the topic provided using a vectorstore
-
-        :return: A JSON object representing the generated quiz question.
-        """
         if not self.llm:
             self.init_llm()
         if not self.vectorstore:
@@ -104,23 +83,6 @@ class QuizGenerator:
         return response
 
     def generate_quiz(self) -> list:
-        """
-        Task: Generate a list of unique quiz questions based on the specified topic and number of questions.
-
-        This method orchestrates the quiz generation process by utilizing the `generate_question_with_vectorstore` method to generate each question and the `validate_question` method to ensure its uniqueness before adding it to the quiz.
-
-        Steps:
-            1. Initialize an empty list to store the unique quiz questions.
-            2. Loop through the desired number of questions (`num_questions`), generating each question via `generate_question_with_vectorstore`.
-            3. For each generated question, validate its uniqueness using `validate_question`.
-            4. If the question is unique, add it to the quiz; if not, attempt to generate a new question (consider implementing a retry limit).
-            5. Return the compiled list of unique quiz questions.
-
-        Returns:
-        - A list of dictionaries, where each dictionary represents a unique quiz question generated based on the topic.
-
-        Note: This method relies on `generate_question_with_vectorstore` for question generation and `validate_question` for ensuring question uniqueness. Ensure `question_bank` is properly initialized and managed.
-        """
         self.question_bank = [] # Reset the question bank
 
         for _ in range(self.num_questions):

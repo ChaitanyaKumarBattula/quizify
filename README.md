@@ -4,6 +4,9 @@
 
 Gemini Quizzify is an innovative tool designed to enhance the learning experience by providing a platform for generating custom quizzes. This application leverages advanced AI technologies to read user-uploaded documents, deliver instant feedback, and dynamically create quizzes with multiple-choice questions, complete with answer keys and explanations.
 
+## Demo Video
+https://github.com/user-attachments/assets/f99c75d4-4e96-40a9-9bf5-abb06221e7a4
+
 ## Detailed Tasks
 * Task 1: Configuring Google Cloud, Vertex AI, & SDK Authentication.
 * Task 2: Setting Up the Development Environment
@@ -157,7 +160,3 @@ chroma_creator = ChromaCollectionCreator(processor, embedding_client)
 -	Question Navigation: 
     - Use Streamlit buttons to navigate and display questions.
  ![Document Upload](Quizify/RadicalAI_Gemini-quizzify10.4.png)
-
-## Appreciation
--	Appreciate Radical AI for providing such a precious experience on AI engineering and backend development.
--	I also want to show my gratitude to Talha Sabri and Mikhail Ocampo for detailed instructions.
